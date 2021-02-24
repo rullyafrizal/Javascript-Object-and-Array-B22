@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 1</title>
+</head>
+<body>
+    <div id="daftarBuah">
+
+    </div>
+    <script>
+        var daftarBuah = [
+            "2. Apel",
+            "5. Jeruk",
+            "3. Anggur",
+            "4. Semangka",
+            "1. Mangga"
+        ];
+
+        let temp;
+
+        for(let i = 0; i < daftarBuah.length; i++){
+            for(let j = i + 1; j < daftarBuah.length; j++){
+                if(daftarBuah[j] < daftarBuah[i]){
+                    temp = daftarBuah[i];
+                    daftarBuah[i] = daftarBuah[j];
+                    daftarBuah[j] = temp;
+                }
+            }
+        }
+
+        console.log(daftarBuah);
+
+        document.getElementById("daftarBuah").innerHTML = daftarBuah.join(`<br>`);
+    </script>
+</body>
+</html>

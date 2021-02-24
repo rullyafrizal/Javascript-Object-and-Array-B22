@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var kalimat="saya sangat senang belajar javascript";
+
+        var stringDelimiter = function (paramInput, delimiter) {
+            var stringArray = [];
+            var tempArray = [];
+            var j = 0;
+
+            for (var i = 0; i < paramInput.length; i++) {
+
+                if (paramInput.charAt(i) == delimiter) {
+                    tempArray = paramInput.charAt(i);
+                    j++;
+                } else {
+                    if (!stringArray[j]) stringArray[j] = '';
+                    stringArray[j] += paramInput.charAt(i);
+                }
+            }
+            return stringArray;
+        }
+
+        let arrayKalimat = stringDelimiter(kalimat, " ");
+        let kalimatLength = arrayKalimat.length;
+
+        for (let i = 0; i < kalimatLength; i++) {
+            if (i === 0) {
+                document.writeln("[\"" + arrayKalimat[i] + "\",");
+            } else if (i === kalimatLength - 1) {
+                document.writeln("\"" + arrayKalimat[i] + "\"]");
+            } else {
+                document.writeln("\"" + arrayKalimat[i] + "\",");
+            }
+            
+        }
+    </script>
+</body>
+</html>
